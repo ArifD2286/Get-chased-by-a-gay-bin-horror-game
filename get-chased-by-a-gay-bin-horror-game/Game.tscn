@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://b2wnslwbls7if"]
 
+[ext_resource type="Script" uid="uid://copwi8cl1ookn" path="res://player.gd" id="1_wbfu4"]
+[ext_resource type="Texture2D" uid="uid://bwj027qjn628w" path="res://Assets/evil gloopy.png" id="2_xkndl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s33ni"]
+
 [node name="Node2D" type="Node2D" unique_id=2040772109]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1239561612]
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=465578131]
+script = ExtResource("1_wbfu4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1797597481]
+shape = SubResource("RectangleShape2D_s33ni")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1765938519]
+scale = Vector2(0.09996507, 0.09996507)
+texture = ExtResource("2_xkndl")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=90373379]
